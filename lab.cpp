@@ -4,7 +4,7 @@ using namespace std;
 
 class Side {
 protected:
-    double a; // Äëèíà ñòîğîíû
+    double a; // Ã„Ã«ÄÃ­Å• Å„ÅˆÃ®Ä‘Ã®Ã­Å±
 
 public:
     Side(double a) : a(a) {}
@@ -13,7 +13,7 @@ public:
 
 class Rectangle : public Side {
 protected:
-    double b; // Âòîğàÿ ñòîğîíà ïğÿìîóãîëüíèêà
+    double b; // Ã‚ÅˆÃ®Ä‘Å•Ë™ Å„ÅˆÃ®Ä‘Ã®Ã­Å• ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™Å•
 
 public:
     Rectangle(double a, double b) : Side(a), b(b) {}
@@ -30,13 +30,13 @@ public:
 
 class Nightstand : public Rectangle {
 private:
-    double height; // Âûñîòà òóìáî÷êè
+    double height; // Ã‚Å±Å„Ã®ÅˆÅ• ÅˆÃ³Ä›Ã¡Ã®Ã·Ä™Ä
 
 public:
     Nightstand(double a, double b, double height) : Rectangle(a, b), height(height) {}
 
     double capacity() {
-        // Ğàñ÷¸ò âìåñòèìîñòè
+        // ÄÅ•Å„Ã·Â¸Åˆ Ã¢Ä›ÄºÅ„ÅˆÄÄ›Ã®Å„ÅˆÄ
         return area() * height;
     }
 
@@ -53,18 +53,18 @@ int main() {
     rect1.showCharacteristics();
     rect2.showCharacteristics();
 
-    // Îïğåäåëåíèå áîëüøåãî ïğÿìîóãîëüíèêà è ñêîëüêî ğàç ìåíüøèé ïğÿìîóãîëüíèê âõîäèò â áîëüøèé
+    // ÃÄÄ‘ÄºÃ¤ÄºÃ«ÄºÃ­ÄÄº Ã¡Ã®Ã«Ã¼Å™ÄºÄƒÃ® ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™Å• Ä Å„Ä™Ã®Ã«Ã¼Ä™Ã® Ä‘Å•Ã§ Ä›ÄºÃ­Ã¼Å™ÄÃ© ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™ Ã¢Å‘Ã®Ã¤ÄÅˆ Ã¢ Ã¡Ã®Ã«Ã¼Å™ÄÃ©
     double area1 = rect1.area();
     double area2 = rect2.area();
 
     if (area1 > area2) {
-        cout << "Ïåğâûé ïğÿìîóãîëüíèê áîëüøå âòîğîãî â " << area1 / area2 << " ğàç(à)." << endl;
+        cout << "ÄÄºÄ‘Ã¢Å±Ã© ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™ Ã¡Ã®Ã«Ã¼Å™Äº Ã¢ÅˆÃ®Ä‘Ã®ÄƒÃ® Ã¢ " << area1 / area2 << " Ä‘Å•Ã§(Å•)." << endl;
     }
     else if (area2 > area1) {
-        cout << "Âòîğîé ïğÿìîóãîëüíèê áîëüøå ïåğâîãî â " << area2 / area1 << " ğàç(à)." << endl;
+        cout << "Ã‚ÅˆÃ®Ä‘Ã®Ã© ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™ Ã¡Ã®Ã«Ã¼Å™Äº ÄÄºÄ‘Ã¢Ã®ÄƒÃ® Ã¢ " << area2 / area1 << " Ä‘Å•Ã§(Å•)." << endl;
     }
     else {
-        cout << "Ïğÿìîóãîëüíèêè ğàâíû." << endl;
+        cout << "ÄÄ‘Ë™Ä›Ã®Ã³ÄƒÃ®Ã«Ã¼Ã­ÄÄ™Ä Ä‘Å•Ã¢Ã­Å±." << endl;
     }
 
     return 0;
