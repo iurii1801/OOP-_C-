@@ -23,21 +23,21 @@ public:
     ~Worker() {}
 
     void inputData() {
-        cout << "Ââåäèòå èìÿ: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¬Ã¿: ";
         cin.ignore();
         getline(cin, name);
-        cout << "Ââåäèòå äàòó ïðèåìà íà ðàáîòó: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã Ã²Ã³ Ã¯Ã°Ã¨Ã¥Ã¬Ã  Ã­Ã  Ã°Ã Ã¡Ã®Ã²Ã³: ";
         getline(cin, hireDate);
-        cout << "Ââåäèòå äîëæíîñòü: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼: ";
         getline(cin, position);
-        cout << "Ââåäèòå çàðïëàòó: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã Ã°Ã¯Ã«Ã Ã²Ã³: ";
         cin >> salary;
         cin.ignore();
     }
 
     void displayData() const {
-        cout << "Èìÿ: " << name << ", Äàòà ïðèåìà íà ðàáîòó: " << hireDate
-            << ", Äîëæíîñòü: " << position << ", Çàðïëàòà: " << salary << endl;
+        cout << "ÃˆÃ¬Ã¿: " << name << ", Ã„Ã Ã²Ã  Ã¯Ã°Ã¨Ã¥Ã¬Ã  Ã­Ã  Ã°Ã Ã¡Ã®Ã²Ã³: " << hireDate
+            << ", Ã„Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼: " << position << ", Ã‡Ã Ã°Ã¯Ã«Ã Ã²Ã : " << salary << endl;
     }
 
    
@@ -55,24 +55,24 @@ void writeToFile(const vector<Worker>& workers, const string& filename) {
     ofstream outputFile(filename); 
     if (outputFile.is_open()) {
         for (const Worker& worker : workers) {
-            outputFile << "Èìÿ: " << worker.getName();
-            outputFile << " Äàòà ïðèåìà íà ðàáîòó: " << worker.getHireDate();
-            outputFile << " Äîëæíîñòü: " << worker.getPosition();
-            outputFile << " Çàðïëàòà: " << worker.getSalary() << " ëååâ."; 
+            outputFile << "ÃˆÃ¬Ã¿: " << worker.getName();
+            outputFile << " Ã„Ã Ã²Ã  Ã¯Ã°Ã¨Ã¥Ã¬Ã  Ã­Ã  Ã°Ã Ã¡Ã®Ã²Ã³: " << worker.getHireDate();
+            outputFile << " Ã„Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼: " << worker.getPosition();
+            outputFile << " Ã‡Ã Ã°Ã¯Ã«Ã Ã²Ã : " << worker.getSalary() << " Ã«Ã¥Ã¥Ã¢."; 
             outputFile << endl; 
         }
         outputFile.close(); 
-        cout << "Äàííûå óñïåøíî çàïèñàíû â ôàéë: " << filename << endl;
+        cout << "Ã„Ã Ã­Ã­Ã»Ã¥ Ã³Ã±Ã¯Ã¥Ã¸Ã­Ã® Ã§Ã Ã¯Ã¨Ã±Ã Ã­Ã» Ã¢ Ã´Ã Ã©Ã«: " << filename << endl;
     }
     else {
-        cout << "Îøèáêà îòêðûòèÿ ôàéëà äëÿ çàïèñè." << endl;
+        cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã®Ã²ÃªÃ°Ã»Ã²Ã¨Ã¿ Ã´Ã Ã©Ã«Ã  Ã¤Ã«Ã¿ Ã§Ã Ã¯Ã¨Ã±Ã¨." << endl;
     }
 }
 
 void readFirstNWorkersFromFile(const string& filename, int n) {
     ifstream inputFile(filename);
     if (!inputFile.is_open()) {
-        cout << "Îøèáêà îòêðûòèÿ ôàéëà äëÿ ÷òåíèÿ." << endl;
+        cout << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã®Ã²ÃªÃ°Ã»Ã²Ã¨Ã¿ Ã´Ã Ã©Ã«Ã  Ã¤Ã«Ã¿ Ã·Ã²Ã¥Ã­Ã¨Ã¿." << endl;
         return;
     }
 
@@ -80,15 +80,15 @@ void readFirstNWorkersFromFile(const string& filename, int n) {
     double salary;
     int count = 0;
     while (count < n && inputFile >> name >> hireDate >> position >> salary) {
-        cout << "Èìÿ: " << name << ", Äàòà ïðèåìà íà ðàáîòó: " << hireDate
-            << ", Äîëæíîñòü: " << position << ", Çàðïëàòà: " << salary << " ëååâ." << endl;
+        cout << "ÃˆÃ¬Ã¿: " << name << ", Ã„Ã Ã²Ã  Ã¯Ã°Ã¨Ã¥Ã¬Ã  Ã­Ã  Ã°Ã Ã¡Ã®Ã²Ã³: " << hireDate
+            << ", Ã„Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼: " << position << ", Ã‡Ã Ã°Ã¯Ã«Ã Ã²Ã : " << salary << " Ã«Ã¥Ã¥Ã¢." << endl;
         count++;
         
         inputFile.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
     if (count == 0) {
-        cout << "Ôàéë ïóñò èëè ñîäåðæèò ìåíåå " << n << " çàïèñåé." << endl;
+        cout << "Ã”Ã Ã©Ã« Ã¯Ã³Ã±Ã² Ã¨Ã«Ã¨ Ã±Ã®Ã¤Ã¥Ã°Ã¦Ã¨Ã² Ã¬Ã¥Ã­Ã¥Ã¥ " << n << " Ã§Ã Ã¯Ã¨Ã±Ã¥Ã©." << endl;
     }
 
     inputFile.close();
@@ -100,27 +100,27 @@ int main() {
     int choice;
 
     do {
-        cout << "\nÌåíþ:" << endl;
-        cout << "1) Ââåñòè ýëåìåíòû ìàññèâà ñ êëàâèàòóðû" << endl;
-        cout << "2) Âûâåñòè íà ýêðàí ýëåìåíòû ìàññèâà" << endl;
-        cout << "3) Ñîðòèðîâàòü â àëôàâèòíîì ïîðÿäêå ïî ïîëþ Èìÿ" << endl;
-        cout << "4) Âûâåñòè íà ýêðàí ýëåìåíòû ñ çàðïëàòîé ìåíüøå ÷åì X" << endl;
-        cout << "5) Äîáàâèòü íà ïîçèöèþ K íîâûé ýëåìåíò" << endl;
-        cout << "6) Óäàëèòü ïåðâûé ýëåìåíò ïî äîëæíîñòè" << endl;
-        cout << "7) Çàïèñàòü ýëåìåíòû ìàññèâà â ôàéë" << endl;
-        cout << "8) Âûâåñòè íà ýêðàí ïåðâûå N ýëåìåíòîâ èç ôàéëà" << endl;
-        cout << "0) Âûõîä" << endl;
-        cout << "Âûáåðèòå äåéñòâèå: ";
+        cout << "\nÃŒÃ¥Ã­Ã¾:" << endl;
+        cout << "1) Ã‚Ã¢Ã¥Ã±Ã²Ã¨ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã± ÃªÃ«Ã Ã¢Ã¨Ã Ã²Ã³Ã°Ã»" << endl;
+        cout << "2) Ã‚Ã»Ã¢Ã¥Ã±Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã±Ã±Ã¨Ã¢Ã " << endl;
+        cout << "3) Ã‘Ã®Ã°Ã²Ã¨Ã°Ã®Ã¢Ã Ã²Ã¼ Ã¢ Ã Ã«Ã´Ã Ã¢Ã¨Ã²Ã­Ã®Ã¬ Ã¯Ã®Ã°Ã¿Ã¤ÃªÃ¥ Ã¯Ã® Ã¯Ã®Ã«Ã¾ ÃˆÃ¬Ã¿" << endl;
+        cout << "4) Ã‚Ã»Ã¢Ã¥Ã±Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã± Ã§Ã Ã°Ã¯Ã«Ã Ã²Ã®Ã© Ã¬Ã¥Ã­Ã¼Ã¸Ã¥ Ã·Ã¥Ã¬ X" << endl;
+        cout << "5) Ã„Ã®Ã¡Ã Ã¢Ã¨Ã²Ã¼ Ã­Ã  Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¾ K Ã­Ã®Ã¢Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²" << endl;
+        cout << "6) Ã“Ã¤Ã Ã«Ã¨Ã²Ã¼ Ã¯Ã¥Ã°Ã¢Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã¯Ã® Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¨" << endl;
+        cout << "7) Ã‡Ã Ã¯Ã¨Ã±Ã Ã²Ã¼ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã±Ã±Ã¨Ã¢Ã  Ã¢ Ã´Ã Ã©Ã«" << endl;
+        cout << "8) Ã‚Ã»Ã¢Ã¥Ã±Ã²Ã¨ Ã­Ã  Ã½ÃªÃ°Ã Ã­ Ã¯Ã¥Ã°Ã¢Ã»Ã¥ N Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã¨Ã§ Ã´Ã Ã©Ã«Ã " << endl;
+        cout << "0) Ã‚Ã»ÃµÃ®Ã¤" << endl;
+        cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã¥: ";
         cin >> choice;
 
         switch (choice) {
            
         case 1: {
             int count;
-            cout << "Ñêîëüêî ðàáîòíèêîâ äîáàâèòü? ";
+            cout << "Ã‘ÃªÃ®Ã«Ã¼ÃªÃ® Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ®Ã¢ Ã¤Ã®Ã¡Ã Ã¢Ã¨Ã²Ã¼? ";
             cin >> count;
             for (int i = 0; i < count; ++i) {
-                cout << "Ðàáîòíèê " << i + 1 << ":" << endl;
+                cout << "ÃÃ Ã¡Ã®Ã²Ã­Ã¨Ãª " << i + 1 << ":" << endl;
                 Worker newWorker;
                 newWorker.inputData();
                 workers.push_back(newWorker);
@@ -140,7 +140,7 @@ int main() {
            
         case 4: {
             double threshold;
-            cout << "Ââåäèòå çíà÷åíèå X: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ X: ";
             cin >> threshold;
             for (const auto& worker : workers) {
                 if (worker.getSalary() < threshold) {
@@ -152,7 +152,7 @@ int main() {
               
         case 5: {
             int index;
-            cout << "Ââåäèòå ïîçèöèþ äëÿ íîâîãî ðàáîòíèêà: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¾ Ã¤Ã«Ã¿ Ã­Ã®Ã¢Ã®Ã£Ã® Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ : ";
             cin >> index;
             if (index >= 0 && index <= workers.size()) {
                 Worker newWorker;
@@ -160,14 +160,14 @@ int main() {
                 workers.insert(workers.begin() + index, newWorker);
             }
             else {
-                cout << "Íåêîððåêòíàÿ ïîçèöèÿ." << endl;
+                cout << "ÃÃ¥ÃªÃ®Ã°Ã°Ã¥ÃªÃ²Ã­Ã Ã¿ Ã¯Ã®Ã§Ã¨Ã¶Ã¨Ã¿." << endl;
             }
             break;
         }
               
         case 6: {
             string pos;
-            cout << "Ââåäèòå äîëæíîñòü äëÿ óäàëåíèÿ: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼ Ã¤Ã«Ã¿ Ã³Ã¤Ã Ã«Ã¥Ã­Ã¨Ã¿: ";
             cin >> pos;
             auto it = find_if(workers.begin(), workers.end(), [&pos](const Worker& w) {
                 return w.getPosition() == pos;
@@ -176,14 +176,14 @@ int main() {
                 workers.erase(it);
             }
             else {
-                cout << "Ðàáîòíèê ñ òàêîé äîëæíîñòüþ íå íàéäåí." << endl;
+                cout << "ÃÃ Ã¡Ã®Ã²Ã­Ã¨Ãª Ã± Ã²Ã ÃªÃ®Ã© Ã¤Ã®Ã«Ã¦Ã­Ã®Ã±Ã²Ã¼Ã¾ Ã­Ã¥ Ã­Ã Ã©Ã¤Ã¥Ã­." << endl;
             }
             break;
         }    
               
         case 7: {
             string filename;
-            cout << "Ââåäèòå èìÿ ôàéëà: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¬Ã¿ Ã´Ã Ã©Ã«Ã : ";
             cin >> filename;
             writeToFile(workers, filename);
             break;
@@ -192,18 +192,18 @@ int main() {
         case 8: {
             string filename;
             int n;
-            cout << "Ââåäèòå èìÿ ôàéëà äëÿ ÷òåíèÿ: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¬Ã¿ Ã´Ã Ã©Ã«Ã  Ã¤Ã«Ã¿ Ã·Ã²Ã¥Ã­Ã¨Ã¿: ";
             cin >> filename;
-            cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ N äëÿ îòîáðàæåíèÿ: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢ N Ã¤Ã«Ã¿ Ã®Ã²Ã®Ã¡Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¿: ";
             cin >> n;
             readFirstNWorkersFromFile(filename, n);
             break;
         }
         case 0:
-            cout << "Âûõîä èç ïðîãðàììû." << endl;
+            cout << "Ã‚Ã»ÃµÃ®Ã¤ Ã¨Ã§ Ã¯Ã°Ã®Ã£Ã°Ã Ã¬Ã¬Ã»." << endl;
             break;
         default:
-            cout << "Íåâåðíûé âûáîð, ïîïðîáóéòå åùå ðàç." << endl;
+            cout << "ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã¢Ã»Ã¡Ã®Ã°, Ã¯Ã®Ã¯Ã°Ã®Ã¡Ã³Ã©Ã²Ã¥ Ã¥Ã¹Ã¥ Ã°Ã Ã§." << endl;
         }
         cin.ignore();
     } while (choice != 0);
